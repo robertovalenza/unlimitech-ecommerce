@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title></title>
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script>
+      const newColletionList = $.get(
+        "https://picsum.photos/v2/list?page=2&limit=5",
+        function (data, status) {
+          console.log(newColletionList.responseJSON);
+        }
+      );
+
+      const productList = $.get(
+        "https://picsum.photos/v2/list?page=1&limit=8",
+        function (data, status) {
+          console.log(newColletionList.responseJSON);
+        }
+      );
+    </script>
+  </head>
+  <body>
+    <header class="container-info">
+      <div class="wrapper-info">
+        <img src="../../Assets/telephone.png" /><span>(+48) 48 623 18 02</span>
+      </div>
+      <div class="wrapper-info">
+        <img src="../../Assets/edit.png" />
+        <span>Napisz do nas!</span>
+      </div>
+      <div class="wrapper-info">
+        <img src="../../Assets/delivery.png" />
+        <span>Darmowa dostawa</span>
+      </div>
+      <div class="wrapper-info">
+        <img src="../../Assets/refund.png" />
+        <span>30 Dni na darmowy zwrot</span>
+      </div>
+    </header>
+
+    <div class="container">
+      <nav class="wrapper-flex-nav">
+        <ul>
+          <li><img src="../../Assets/unlimitech_logo.svg" class="logo" /></li>
+          <li><a href="#">Damskie buty skórzane</a></li>
+          <li><a href="#">Bony podarunkowe</a></li>
+          <li><a href="#">Nowości</a></li>
+          <li><a href="#">Bestsellery</a></li>
+          <li><a href="#">% Wyprzedaz %</a></li>
+        </ul>
+        <div class="wrapper-flex-nav-searchbar">
+          <div class="wrapper-searchbar">
+            <input type="text" placeholder="Wyszukaj" />
+            <div class="wrapper-searchbar-logo">
+              <img src="../../Assets/search.png" width="10px" height="10px" />
+            </div>
+          </div>
+          <div class="container-searchbar-logo">
+            <div class="wrapper-searchbar-logo">
+              <img src="../../Assets/user.png" width="10px" height="10px" />
+            </div>
+          </div>
+          <div class="container-searchbar-logo">
+            <div class="wrapper-searchbar-logo">
+              <img src="../../Assets/heart.png" width="10px" height="10px" />
+            </div>
+          </div>
+          <div class="container-searchbar-logo">
+            <div class="wrapper-searchbar-logo">
+              <img
+                src="../../Assets/shopping-bag.png"
+                width="10px"
+                height="10px"
+              />
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </body>
+</html>
