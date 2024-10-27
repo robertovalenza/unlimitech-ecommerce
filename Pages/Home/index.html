@@ -20,37 +20,59 @@
       src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
     ></script>
     <script>
-      $.get("https://picsum.photos/v2/list?page=26&limit=5", function (data) {
+        $.get("https://picsum.photos/v2/list?page=26&limit=5", function (data) {
         data.forEach((item) => {
-          $(".container-slider").append(` 
-                <div class="slide-item">
-                    <img src="${item.download_url}" alt="immagine">
-                    <div class="wrapper-slider">
-                        <div class="wrapper-caption">
-                            <h1 class="image-caption">Nowa kolekcja</h1>
-                        <p class="image-caption">Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab.</p>
-                        </div>
-                        <button>Zobacz więcej</button>
-                    </div>
+            $(".container-slider").append(` 
+            <div class="slide-item">
+                <img src="${item.download_url}" alt="immagine" loading="lazy">
+                <div class="wrapper-slider">
+                <div class="wrapper-caption">
+                    <h1 class="image-caption">Nowa kolekcja</h1>
+                    <p class="image-caption">
+                    Sed ut perspiciatis, unde omnis iste natus error sit voluptatem
+                    accusantium doloremque laudantium, totam rem aperiam eaque ipsa,
+                    quae ab.
+                    </p>
                 </div>
+                <button>Zobacz więcej</button>
+                </div>
+            </div>
             `);
         });
 
         $(".container-slider").slick({
             dots: true,
+            lazyLoad: 'ondemand', 
             prevArrow:
-                '<button class="slick-button slick-prev"><img src="../../Assets/arrow.png" width="16" height="16"/></button>',
+            '<button class="slick-button slick-prev"><img src="../../Assets/arrow.png" width="16" height="16"/></button>',
             nextArrow:
-                '<button class="slick-button slick-next"><img src="../../Assets/arrow.png" width="16" height="16"/></button>',
+            '<button class="slick-button slick-next"><img src="../../Assets/arrow.png" width="16" height="16"/></button>',
         });
-      });
+        });
 
-      const productList = $.get(
-        "https://picsum.photos/v2/list?page=1&limit=8",
-        function (data, status) {
-          console.log(productList.responseJSON);
-        }
-      );
+
+      const descriptions = [
+        "Baleriny",
+        "Baleriny",
+        "Baleriny",
+        "Baleriny",
+        "Baleriny",
+        "Baleriny",
+        "Baleriny",
+        "Baleriny"
+        ];
+
+        $.get("https://picsum.photos/v2/list?page=100&limit=8", function (data) {
+            data.forEach((item, index) => {
+                $(".container-cards").append(`
+                <div class="card">
+                    <img src="${item.download_url}" alt="immagine" loading="lazy">
+                    <div class="card-content">${descriptions[index]}</div>
+                </div>
+                `);
+            });
+            });
+
     </script>
 
   <body>
@@ -113,6 +135,7 @@
       </nav>
 
       <div class="container-slider"></div>
+      <div class="container-cards"></div>
     </div>
   </body>
 </html>
