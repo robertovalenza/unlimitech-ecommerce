@@ -8,24 +8,51 @@
       href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
     <title></title>
     <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script
+      type="text/javascript"
+      src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
     <script>
-      const newColletionList = $.get(
-        "https://picsum.photos/v2/list?page=2&limit=5",
-        function (data, status) {
-          console.log(newColletionList.responseJSON);
-        }
-      );
+      $.get("https://picsum.photos/v2/list?page=26&limit=5", function (data) {
+        data.forEach((item) => {
+          $(".container-slider").append(` 
+                <div class="slide-item">
+                    <img src="${item.download_url}" alt="immagine">
+                    <div class="wrapper-slider">
+                        <div class="wrapper-caption">
+                            <h1 class="image-caption">Nowa kolekcja</h1>
+                        <p class="image-caption">Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab.</p>
+                        </div>
+                        <button>Zobacz więcej</button>
+                    </div>
+                </div>
+            `);
+        });
+
+        $(".container-slider").slick({
+            dots: true,
+            prevArrow:
+                '<button class="slick-button slick-prev"><img src="../../Assets/arrow.png" width="16" height="16"/></button>',
+            nextArrow:
+                '<button class="slick-button slick-next"><img src="../../Assets/arrow.png" width="16" height="16"/></button>',
+        });
+      });
 
       const productList = $.get(
         "https://picsum.photos/v2/list?page=1&limit=8",
         function (data, status) {
-          console.log(newColletionList.responseJSON);
+          console.log(productList.responseJSON);
         }
       );
     </script>
-  </head>
+
   <body>
     <header class="container-info">
       <div class="wrapper-info">
@@ -79,10 +106,13 @@
                 width="10px"
                 height="10px"
               />
+              <span class="notification-dot"></span>
             </div>
           </div>
         </div>
       </nav>
+
+      <div class="container-slider"></div>
     </div>
   </body>
 </html>
