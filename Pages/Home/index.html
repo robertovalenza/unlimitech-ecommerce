@@ -2,12 +2,6 @@
 <html>
   <head>
     <link rel="stylesheet" href="./style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
     <link
       rel="stylesheet"
       type="text/css"
@@ -44,9 +38,9 @@
             dots: true,
             lazyLoad: 'ondemand', 
             prevArrow:
-            '<button class="slick-button slick-prev"><img src="../../Assets/arrow.png" width="16" height="16"/></button>',
+            '<button class="slick-button slick-prev"><img src="../../Assets/arrow.svg" width="16" height="16"/></button>',
             nextArrow:
-            '<button class="slick-button slick-next"><img src="../../Assets/arrow.png" width="16" height="16"/></button>',
+            '<button class="slick-button slick-next"><img src="../../Assets/arrow.svg" width="16" height="16"/></button>',
         });
         });
 
@@ -78,18 +72,18 @@
   <body>
     <header class="container-info">
       <div class="wrapper-info">
-        <img src="../../Assets/telephone.png" /><span>(+48) 48 623 18 02</span>
+        <img src="../../Assets/telephone.svg" /><span>(+48) 48 623 18 02</span>
       </div>
       <div class="wrapper-info">
-        <img src="../../Assets/edit.png" />
+        <img src="../../Assets/edit.svg" />
         <span>Napisz do nas!</span>
       </div>
       <div class="wrapper-info">
-        <img src="../../Assets/delivery.png" />
+        <img src="../../Assets/delivery.svg" />
         <span>Darmowa dostawa</span>
       </div>
       <div class="wrapper-info">
-        <img src="../../Assets/refund.png" />
+        <img src="../../Assets/refund.svg" />
         <span>30 Dni na darmowy zwrot</span>
       </div>
     </header>
@@ -98,7 +92,15 @@
       <nav class="wrapper-flex-nav">
         <ul>
           <li><img src="../../Assets/unlimitech_logo.svg" class="logo" /></li>
-          <li><a href="#">Damskie buty skórzane</a></li>
+          <li class="dropdown">
+            <a href="#">Damskie buty skórzane <img src="../../Assets/down-chevron.svg"/></a>
+            <ul class="dropdown-menu">
+                <li><a href="#">Botki</a></li>
+                <li><a href="#">Szpilki</a></li>
+                <li><a href="#">Czółenka</a></li>
+                <li><a href="#">Baleriny</a></li>
+            </ul>
+          </li>          
           <li><a href="#">Bony podarunkowe</a></li>
           <li><a href="#">Nowości</a></li>
           <li><a href="#">Bestsellery</a></li>
@@ -108,25 +110,25 @@
           <div class="wrapper-searchbar">
             <input type="text" placeholder="Wyszukaj" />
             <div class="wrapper-searchbar-logo">
-              <img src="../../Assets/search.png" width="10px" height="10px" />
+              <img src="../../Assets/search.svg" width="18px" height="18px" />
             </div>
           </div>
           <div class="container-searchbar-logo">
             <div class="wrapper-searchbar-logo">
-              <img src="../../Assets/user.png" width="10px" height="10px" />
+              <img src="../../Assets/user.svg" width="16px" height="16px" />
             </div>
           </div>
           <div class="container-searchbar-logo">
             <div class="wrapper-searchbar-logo">
-              <img src="../../Assets/heart.png" width="10px" height="10px" />
+              <img src="../../Assets/heart.svg" width="16px" height="16px" />
             </div>
           </div>
           <div class="container-searchbar-logo">
             <div class="wrapper-searchbar-logo">
               <img
-                src="../../Assets/shopping-bag.png"
-                width="10px"
-                height="10px"
+                src="../../Assets/shopping-bag.svg"
+                width="16px"
+                height="16px"
               />
               <span class="notification-dot"></span>
             </div>
@@ -136,6 +138,45 @@
 
       <div class="container-slider"></div>
       <div class="container-cards"></div>
+      <div class="container-newsletter">
+        <div class="wrapper-newsletter-description">
+            <img src="../../Assets/email.png" width="124px" height="100%" alt="letter-logo"/>
+            <div class="wrapper-newsletter-paragraph">
+                <p>Chcesz otrzymać 5% zniżki na swoje zakupy?</p>
+                <p>Zapisz się do naszego newslettera i jako pierwsza dowiedz się o nowościach,<br>promocjach i ofertach specjalnych!</br>
+            </div>
+        </div>
+        <div class="wrapper-newsletter-email">
+            <div class="wrapper-searchbar">
+                <input type="text" placeholder="Twój adres email" />
+                <div class="wrapper-searchbar-logo">
+                  <img src="../../Assets/arrow.svg" width="18px" height="18px" />
+                </div>
+            </div>
+            <div class="wrapper-flex-align">
+                <input type="checkbox" id="checkbox"/>
+                <label for="checkbox" style="font-size: 10px;">Akceptuję <u>Regulamin</u> i <u>Politykę Prywatności.</u></label><br>
+            </div>
+        </div>
+      </div>
+      <footer class="container-footer">
+        <div class="wrapper-social">
+            <p>Social media</p>
+            <div class="wrapper-social-logo">
+                <img src="../../Assets/facebook.svg" width="24px" height="24px"/>
+                <img src="../../Assets/instagram.svg" width="24px" height="24px"/>
+                <img src="../../Assets/tiktok.svg" width="24px" height="24px"/>
+            </div>
+        </div>
+        <div class="wrapper-contacts">
+            <p>Skontaktuj się z nami</p>
+            <div class="wrapper-flex-align ">
+                <img src="../../Assets/telephone-colored.svg" width="16px" height="16px"/>
+                <p>(+48) 48 623 18 02</p>
+            </div>
+           <p>Jesteśmy do Twojej dyspozycji<br>od poniedziałku do piątku<br>w godzinach 8:00 - 16:00</p>
+        </div>
+      </footer>
     </div>
   </body>
 </html>
