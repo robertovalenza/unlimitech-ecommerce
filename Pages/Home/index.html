@@ -20,15 +20,16 @@
             <div class="slide-item">
                 <img src="${item.download_url}" alt="immagine" loading="lazy">
                 <div class="wrapper-slider">
-                <div class="wrapper-caption">
-                    <h1 class="image-caption">Nowa kolekcja</h1>
-                    <p class="image-caption">
-                    Sed ut perspiciatis, unde omnis iste natus error sit voluptatem
-                    accusantium doloremque laudantium, totam rem aperiam eaque ipsa,
-                    quae ab.
-                    </p>
-                </div>
-                <button>Zobacz więcej</button>
+                  <div class="wrapper-caption">
+                      <h1 class="image-caption">Nowa kolekcja</h1>
+                      <p class="image-caption">
+                      Sed ut perspiciatis, unde omnis iste natus error sit voluptatem
+                      accusantium doloremque laudantium, totam rem aperiam eaque ipsa,
+                      quae ab.
+                      </p>
+                      <button id="button-mobile">Zobacz więcej</button>
+                  </div>
+                  <button id="button-desktop">Zobacz więcej</button>
                 </div>
             </div>
             `);
@@ -90,7 +91,7 @@
 
     <div class="container">
       <nav class="wrapper-flex-nav">
-        <ul>
+        <ul id="desktop">
           <li><img src="../../Assets/unlimitech_logo.svg" class="logo" /></li>
           <li class="dropdown">
             <a href="#">Damskie buty skórzane <img src="../../Assets/down-chevron.svg"/></a>
@@ -106,34 +107,47 @@
           <li><a href="#">Bestsellery</a></li>
           <li><a href="#">% Wyprzedaz %</a></li>
         </ul>
-        <div class="wrapper-flex-nav-searchbar">
-          <div class="wrapper-searchbar">
-            <input type="text" placeholder="Wyszukaj" />
-            <div class="wrapper-searchbar-logo">
-              <img src="../../Assets/search.svg" width="18px" height="18px" />
+        <div class="wrapper-nav-mobile">
+          <div class="wrapper-flex-nav-searchbar">
+            <div class="wrapper-searchbar" id="searchbar-desktop">
+              <input type="text" placeholder="Wyszukaj" />
+              <div class="wrapper-logo">
+                <img src="../../Assets/search.svg" width="18px" height="18px" />
+              </div>
+            </div>
+            <div class="container-logo">
+              <div class="wrapper-logo">
+                <img src="../../Assets/user.svg" width="16px" height="16px" />
+              </div>
+            </div>
+            <div class="container-logo">
+              <div class="wrapper-logo">
+                <img src="../../Assets/heart.svg" width="16px" height="16px" />
+              </div>
+            </div>
+            <div class="container-logo">
+              <div class="wrapper-logo">
+                <img
+                  src="../../Assets/shopping-bag.svg"
+                  width="16px"
+                  height="16px"
+                />
+                <span class="notification-dot"></span>
+              </div>
+            </div>
+            <div class="container-logo" id="hamburger-menu">
+              <div class="wrapper-logo">
+                <img src="../../Assets/hamburger-menu.svg" width="16px" height="16px" />
+              </div>
             </div>
           </div>
-          <div class="container-searchbar-logo">
-            <div class="wrapper-searchbar-logo">
-              <img src="../../Assets/user.svg" width="16px" height="16px" />
-            </div>
-          </div>
-          <div class="container-searchbar-logo">
-            <div class="wrapper-searchbar-logo">
-              <img src="../../Assets/heart.svg" width="16px" height="16px" />
-            </div>
-          </div>
-          <div class="container-searchbar-logo">
-            <div class="wrapper-searchbar-logo">
-              <img
-                src="../../Assets/shopping-bag.svg"
-                width="16px"
-                height="16px"
-              />
-              <span class="notification-dot"></span>
-            </div>
+        <div class="wrapper-searchbar" id="searchbar-mobile">
+          <input type="text" placeholder="Wyszukaj" />
+          <div class="wrapper-logo">
+            <img src="../../Assets/search.svg" width="18px" height="18px" />
           </div>
         </div>
+      </div>
       </nav>
 
       <div class="container-slider"></div>
@@ -143,13 +157,13 @@
             <img src="../../Assets/email.png" width="124px" height="100%" alt="letter-logo"/>
             <div class="wrapper-newsletter-paragraph">
                 <p>Chcesz otrzymać 5% zniżki na swoje zakupy?</p>
-                <p>Zapisz się do naszego newslettera i jako pierwsza dowiedz się o nowościach,<br>promocjach i ofertach specjalnych!</br>
+                <p>Zapisz się do naszego newslettera i jako pierwsza dowiedz się o nowościach,<p>promocjach i ofertach specjalnych!</p></p>
             </div>
         </div>
         <div class="wrapper-newsletter-email">
             <div class="wrapper-searchbar">
                 <input type="text" placeholder="Twój adres email" />
-                <div class="wrapper-searchbar-logo">
+                <div class="wrapper-logo">
                   <img src="../../Assets/arrow.svg" width="18px" height="18px" />
                 </div>
             </div>
@@ -168,7 +182,7 @@
                 <img src="../../Assets/tiktok.svg" width="24px" height="24px"/>
             </div>
         </div>
-        <div class="wrapper-contacts">
+        <div class="wrapper-contacts" id="desktop-footer">
             <p>Skontaktuj się z nami</p>
             <div class="wrapper-flex-align ">
                 <img src="../../Assets/telephone-colored.svg" width="16px" height="16px"/>
@@ -176,6 +190,16 @@
             </div>
            <p>Jesteśmy do Twojej dyspozycji<br>od poniedziałku do piątku<br>w godzinach 8:00 - 16:00</p>
         </div>
+        <div class="wrapper-contacts" id="mobile-footer">
+          <p>Skontaktuj się z nami</p>
+          <div class="wrapper-footer-mobile">
+            <img src="../../Assets/telephone-colored.svg" width="16px" height="16px"/>
+            <div class="wrapper-flex-align ">
+                <p>(+48) 48 623 18 02</p>
+                <p>Jesteśmy do Twojej dyspozycji<br>od poniedziałku do piątku<br>w godzinach 8:00 - 16:00</p>
+            </div>
+        </div>
+      </div>
       </footer>
     </div>
   </body>
