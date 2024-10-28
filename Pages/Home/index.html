@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <title></title>
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script
+      type="text/javascript"
+      src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
+    <script>
+        $.get("https://picsum.photos/v2/list?page=26&limit=5", function (data) {
+        data.forEach((item) => {
+            $(".container-slider").append(` 
+            <div class="slide-item">
+                <img src="${item.download_url}" alt="immagine" loading="lazy">
+                <div class="wrapper-slider">
+                  <div class="wrapper-caption">
+                      <h1 class="image-caption">Nowa kolekcja</h1>
+                      <p class="image-caption">
+                      Sed ut perspiciatis, unde omnis iste natus error sit voluptatem
+                      accusantium doloremque laudantium, totam rem aperiam eaque ipsa,
+                      quae ab.
+                      </p>
+                      <button id="button-mobile">Zobacz więcej</button>
+                  </div>
+                  <button id="button-desktop">Zobacz więcej</button>
+                </div>
+            </div>
+            `);
+        });
+
+        $(".container-slider").slick({
+            dots: true,
+            lazyLoad: 'ondemand', 
+            prevArrow:
+            '<button class="slick-button slick-prev"><img src="../../Assets/arrow.svg" width="16" height="16"/></button>',
+            nextArrow:
+            '<button class="slick-button slick-next"><img src="../../Assets/arrow.svg" width="16" height="16"/></button>',
+        });
+        });
+
+
+      const descriptions = [
+        "Baleriny",
+        "Baleriny",
+        "Baleriny",
+        "Baleriny",
+        "Baleriny",
+        "Baleriny",
+        "Baleriny",
+        "Baleriny"
+        ];
+
+        $.get("https://picsum.photos/v2/list?page=100&limit=8", function (data) {
+            data.forEach((item, index) => {
+                $(".container-cards").append(`
+                <div class="card">
+                    <img src="${item.download_url}" alt="immagine" loading="lazy">
+                    <div class="card-content">${descriptions[index]}</div>
+                </div>
+                `);
+            });
+            });
+
+    </script>
+
+  <body>
+    <header class="container-info">
+      <div class="wrapper-info">
+        <img src="../../Assets/telephone.svg" /><span>(+48) 48 623 18 02</span>
+      </div>
+      <div class="wrapper-info">
+        <img src="../../Assets/edit.svg" />
+        <span>Napisz do nas!</span>
+      </div>
+      <div class="wrapper-info">
+        <img src="../../Assets/delivery.svg" />
+        <span>Darmowa dostawa</span>
+      </div>
+      <div class="wrapper-info">
+        <img src="../../Assets/refund.svg" />
+        <span>30 Dni na darmowy zwrot</span>
+      </div>
+    </header>
+
+    <div class="container">
+      <nav class="wrapper-flex-nav">
+        <ul id="desktop">
+          <li><img src="../../Assets/unlimitech_logo.svg" class="logo" /></li>
+          <li class="dropdown">
+            <a href="#">Damskie buty skórzane <img src="../../Assets/down-chevron.svg"/></a>
+            <ul class="dropdown-menu">
+                <li><a href="#">Botki</a></li>
+                <li><a href="#">Szpilki</a></li>
+                <li><a href="#">Czółenka</a></li>
+                <li><a href="#">Baleriny</a></li>
+            </ul>
+          </li>          
+          <li><a href="#">Bony podarunkowe</a></li>
+          <li><a href="#">Nowości</a></li>
+          <li><a href="#">Bestsellery</a></li>
+          <li><a href="#">% Wyprzedaz %</a></li>
+        </ul>
+        <div class="wrapper-nav-mobile">
+          <div class="wrapper-nav-logo-mobile">
+          <img src="../../Assets/unlimitech_logo.svg" class="logo" id="mobile-logo"/>
+          <div class="wrapper-flex-nav-searchbar">
+            <div class="wrapper-searchbar" id="searchbar-desktop">
+              <input type="text" placeholder="Wyszukaj" />
+              <div class="wrapper-logo">
+                <img src="../../Assets/search.svg" width="18px" height="18px" />
+              </div>
+            </div>
+            <div class="container-logo">
+              <div class="wrapper-logo">
+                <img src="../../Assets/user.svg" width="16px" height="16px" />
+              </div>
+            </div>
+            <div class="container-logo">
+              <div class="wrapper-logo">
+                <img src="../../Assets/heart.svg" width="16px" height="16px" />
+              </div>
+            </div>
+            <div class="container-logo">
+              <div class="wrapper-logo">
+                <img
+                  src="../../Assets/shopping-bag.svg"
+                  width="16px"
+                  height="16px"
+                />
+                <span class="notification-dot"></span>
+              </div>
+            </div>
+              <div class="container-logo" id="hamburger-menu">
+                <div class="wrapper-logo">
+                  <img src="../../Assets/hamburger-menu.svg" width="16px" height="16px" />
+                </div>
+              </div>
+            </div>
+          </div>
+        <div class="wrapper-searchbar" id="searchbar-mobile">
+          <input type="text" placeholder="Wyszukaj" />
+          <div class="wrapper-logo">
+            <img src="../../Assets/search.svg" width="18px" height="18px" />
+          </div>
+        </div>
+      </div>
+      </nav>
+
+      <div class="container-slider"></div>
+      <div class="container-cards"></div>
+      <div class="container-newsletter">
+        <div class="wrapper-newsletter-description">
+            <img src="../../Assets/email.png" width="124px" height="100%" alt="letter-logo"/>
+            <div class="wrapper-newsletter-paragraph">
+                <p>Chcesz otrzymać 5% zniżki na swoje zakupy?</p>
+                <p>Zapisz się do naszego newslettera i jako pierwsza dowiedz się o nowościach,<p>promocjach i ofertach specjalnych!</p></p>
+            </div>
+        </div>
+        <div class="wrapper-newsletter-email">
+            <div class="wrapper-searchbar">
+                <input type="text" placeholder="Twój adres email" />
+                <div class="wrapper-logo">
+                  <img src="../../Assets/arrow.svg" width="18px" height="18px" />
+                </div>
+            </div>
+            <div class="wrapper-flex-align">
+                <input type="checkbox" id="checkbox"/>
+                <label for="checkbox" style="font-size: 10px;">Akceptuję <u>Regulamin</u> i <u>Politykę Prywatności.</u></label><br>
+            </div>
+        </div>
+      </div>
+      <footer class="container-footer">
+        <div class="wrapper-social">
+            <p>Social media</p>
+            <div class="wrapper-social-logo">
+                <img src="../../Assets/facebook.svg" width="24px" height="24px"/>
+                <img src="../../Assets/instagram.svg" width="24px" height="24px"/>
+                <img src="../../Assets/tiktok.svg" width="24px" height="24px"/>
+            </div>
+        </div>
+        <div class="wrapper-contacts" id="desktop-footer">
+            <p>Skontaktuj się z nami</p>
+            <div class="wrapper-flex-align ">
+                <img src="../../Assets/telephone-colored.svg" width="16px" height="16px"/>
+                <p>(+48) 48 623 18 02</p>
+            </div>
+           <p>Jesteśmy do Twojej dyspozycji<br>od poniedziałku do piątku<br>w godzinach 8:00 - 16:00</p>
+        </div>
+        <div class="wrapper-contacts" id="mobile-footer">
+          <p>Skontaktuj się z nami</p>
+          <div class="wrapper-footer-mobile">
+            <img src="../../Assets/telephone-colored.svg" width="16px" height="16px"/>
+            <div class="wrapper-flex-align ">
+                <p>(+48) 48 623 18 02</p>
+                <p>Jesteśmy do Twojej dyspozycji<br>od poniedziałku do piątku<br>w godzinach 8:00 - 16:00</p>
+            </div>
+        </div>
+      </div>
+      </footer>
+    </div>
+  </body>
+</html>
